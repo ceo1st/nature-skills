@@ -9,8 +9,7 @@
   <tr>
     <td align="center">
       <b>视频教程请关注抖音</b><br>
-
-      <img width="500" alt="6.17投资交流会" src="https://github.com/user-attachments/assets/66679eba-5dea-4116-9fb1-9d3b436f6256" />
+      <img width="500" alt="6.17投资交流会" src="https://github.com/user-attachments/assets/1eefda21-86a4-4081-96e4-d40dea9e1e7b" />
     </td>
     <td align="center">
       <b>个人微信</b><br>
