@@ -4,7 +4,7 @@ English | [中文](README.md)
 
 - Hello everyone, I am Yizhe Yuan, the founder of `nature-skills`. Thank you for
   following this project. We have published many video tutorials on Douyin; you
-  can search by topic name to find them.
+  can search by topic name to find them, and I sincerely hope they help you.
 - If you have a concrete need, please open an issue. If we think the request is
   meaningful and feasible, we will try to move it forward. Pull requests are also
   welcome; please follow the contribution format later in this document so that
@@ -28,12 +28,13 @@ English | [中文](README.md)
 # Some Personal Views
 
 - Recently, I noticed that the Nature Skills design has drawn attention from
-  Google DeepMind and appears to have influenced aspects of their Science Skills
-  work, including citation organization, script-oriented workflows, and the
-  philosophy of skill design. I see this as a positive signal: when leading
-  international AI institutions begin to learn from work created by Chinese
-  developers, it means original ideas from China are becoming visible in the
-  global open-source ecosystem.
+  Google DeepMind and has been referenced by them. They drew on its citation
+  system, script ideas, and skill-design philosophy to launch Science Skills. To
+  be honest, this makes me pleased: when leading international AI institutions
+  begin to draw inspiration from our work, it means original ideas from Chinese
+  developers are being seen by the world. This is not a feeling of loss from
+  being copied, but a sign of Chinese strength taking root in open source and
+  naturally growing outward.
 - The focus of our skill design has never been to require every user to fully
   master the whole philosophy. The point is that the philosophy itself can be
   understood and reused by machines. If you want to create a new skill or adapt
@@ -42,10 +43,13 @@ English | [中文](README.md)
   skill. This is how ideas become operational rather than remaining oral
   explanations.
 - The real value of Nature Skills may not be limited to any individual module.
-  It opens a door for many researchers to realize that Codex or other agents can
-  operate a local computer for research work. I have seen many people shift their
-  research workflow after discovering that this is possible. That change in
-  thinking matters more than any single skill.
+  It may be that the project has quietly opened a new door: many people realize
+  for the first time that Codex or other agents can operate a local computer for
+  research. I have been fortunate to witness and accompany many people through
+  this shift in research workflow. When they say, "so research can be done this
+  way," that break in understanding and liberation of thought matters more to me
+  than the skills themselves. This is not merely the success of a tool, but the
+  beginning of a new way of thinking spreading among people.
 - In practice, almost every useful tool can be distilled into a standardized
   process, and standardized processes can be packaged as reusable skills.
 
@@ -211,25 +215,26 @@ For manual or non-Codex use:
 
 ## Skill Index
 
-`skills/_shared/` is shared content and is not listed as an installable skill.
+The current `skills/` directory contains the following triggerable skills.
+`skills/_shared/` is shared content and is not counted in the skill index.
 
 | Skill | Status | Purpose | Example Triggers |
 |---|---|---|---|
-| [`nature-figure`](skills/nature-figure/README.md) | Stable | Submission-grade scientific figures for Nature or other high-impact journals, with a figures4papers-style workflow | "Nature figure", "publication plot", "scientific figure", "figures4papers" |
-| [`nature-polishing`](skills/nature-polishing/README.md) | Stable | Polish, restructure, or translate academic prose into Nature-leaning English | "Nature style", "polish", "academic writing", "English manuscript" |
-| [`nature-writing`](skills/nature-writing/README.md) | Draft | Draft Nature-style manuscript sections and rebuild a paper argument | "Nature writing", "write an abstract", "write introduction", "manuscript draft" |
-| [`nature-reviewer`](skills/nature-reviewer/README.md) | Draft | Simulate Nature-style reviewer assessment with three reviewer reports and a cross-review synthesis | "Nature reviewer", "pre-submission review", "reviewer report", "peer-review style critique" |
-| [`nature-citation`](skills/nature-citation/README.md) | Beta | Find support citations constrained to Nature/CNS-style sources and export reference-manager formats | "Nature citation", "CNS citation", "supporting references", "Zotero RDF" |
-| [`nature-data`](skills/nature-data/README.md) | Draft | Prepare Data Availability statements, repository plans, and FAIR metadata checks | "Data Availability", "repository", "FAIR metadata" |
-| [`nature-reader`](skills/nature-reader/README.md) | Beta | Build source-grounded full-paper Markdown readers with Chinese-English alignment and figure/table placement | "paper reader", "full Markdown", "side-by-side translation", "figure-aware reading" |
-| [`nature-response`](skills/nature-response/README.md) | Beta | Draft, audit, or revise point-by-point reviewer response letters | "response to reviewers", "rebuttal letter", "major revision" |
-| [`nature-paper2ppt`](skills/nature-paper2ppt/README.md) | Beta | Generate Chinese academic PPTX decks from research papers | "paper PPT", "journal club", "paper to slides" |
-| [`nature-paper-to-patent`](skills/nature-paper-to-patent/README.md) | Beta | Convert papers, reports, or project materials into evidence-grounded Chinese invention patent drafts | "paper to patent", "Chinese patent", "claims drafting" |
-| [`nature-academic-search`](skills/nature-academic-search/README.md) | Beta | Multi-source literature search, citation verification, and reference management | "search papers", "find articles", "literature search", "verify DOI" |
-| [`nature-downloader`](skills/nature-downloader/README.md) | Beta | Use library access, Chrome sessions, and legitimate open-access routes to obtain academic full text/PDFs | "download papers", "library PDF", "CARSI", "Web of Science" |
-| [`nature-literature-pipeline`](skills/nature-literature-pipeline/README.md) | Stable | Automated literature discovery pipeline with retrieval, six-axis scoring, deep-reading delivery, and local archiving | "literature pipeline", "daily literature push", "cron" |
-| [`nature-experiment-log`](skills/nature-experiment-log/README.md) | Draft | Standardize experiment logs from images, voice, and text into Obsidian-compatible Markdown with YAML frontmatter | "experiment log", "record experiment", "Obsidian vault" |
-| [`nature-proposal-writer`](skills/nature-proposal-writer/README.md) | Beta | Proposal-first research writing state machine for evidence, argument, section contracts, drafting, and QA | "researchwrite", "proposal", "research plan" |
+| [`nature-figure`](skills/nature-figure/README.md) | Stable | Submission-grade Python or R scientific figure workflow for Nature / high-impact journals, with a figures4papers-style demo | "Nature figure", "submission-grade figure", "publication plot", "scientific figure", "figures4papers" |
+| [`nature-polishing`](skills/nature-polishing/README.md) | Stable | Polish, restructure, or translate academic prose into Nature-style English | "Nature style", "polishing", "academic writing", "English manuscript" |
+| [`nature-writing`](skills/nature-writing/README.md) | Draft | Draft Nature-style manuscript sections and rebuild a paper argument | "Nature writing", "write an abstract", "write introduction", "manuscript draft", "paper writing" |
+| [`nature-reviewer`](skills/nature-reviewer/README.md) | Draft | Simulate Nature-style reviewer assessment from the reviewer perspective, returning three reviewer reports and a synthesis | "Nature reviewer", "pre-submission review", "reviewer report", "reviewer-perspective assessment" |
+| [`nature-citation`](skills/nature-citation/README.md) | Beta | Search support literature strictly within Nature / CNS families and export ENW, RIS, or Zotero RDF | "Nature citation", "CNS citation", "segmented citation", "supporting references", "Zotero RDF" |
+| [`nature-data`](skills/nature-data/README.md) | Draft | Prepare Data Availability statements, data repository plans, and FAIR checks | "Data Availability", "data availability", "repository", "FAIR metadata" |
+| [`nature-reader`](skills/nature-reader/README.md) | Beta | Generate full-paper Markdown readers with source anchors, figure-text alignment, and Chinese-English side-by-side translation | "nature reader", "full Markdown", "source-aligned text", "figure-text alignment", "full translation" |
+| [`nature-response`](skills/nature-response/README.md) | Beta | Draft, audit, and revise point-by-point response letters to reviewers | "response to reviewers", "rebuttal letter", "major revision", "reviewer-comment response" |
+| [`nature-paper2ppt`](skills/nature-paper2ppt/README.md) | Beta | Generate Chinese PPTX journal-club or paper-presentation decks from research papers | "paper PPT", "journal club", "paper to slides", "paper presentation" |
+| [`nature-paper-to-patent`](skills/nature-paper-to-patent/README.md) | Beta | Generate evidence-constrained Chinese invention patent drafts from papers, technical reports, or project materials | "paper to patent", "Chinese patent", "paper-to-patent", "claims drafting" |
+| [`nature-academic-search`](skills/nature-academic-search/README.md) | Beta | Multi-source literature search, citation verification, and reference management | "search papers", "find articles", "literature search", "literature lookup", "verify DOI" |
+| [`nature-downloader`](skills/nature-downloader/README.md) | Beta | Legally obtain academic full text/PDFs through library access, Chrome login state, and open-access routes | "download papers", "library paper download", "CARSI", "Web of Science", "PDF download" |
+| [`nature-literature-pipeline`](skills/nature-literature-pipeline/README.md) | Stable | Automated literature discovery pipeline: multi-source retrieval, six-axis scoring, deep-reading delivery, and local archiving | "literature pipeline", "daily literature", "literature push", "daily literature push", "cron" |
+| [`nature-experiment-log`](skills/nature-experiment-log/README.md) | Draft | Standardize experiment images, voice, and text into Obsidian experiment logs with YAML frontmatter and archived source materials | "experiment log", "record experiment", "Obsidian vault", "Feishu research group" |
+| [`nature-proposal-writer`](skills/nature-proposal-writer/README.md) | Beta | Proposal-first research writing state machine: establish evidence, argument, and section contracts before drafting or reviewing text | "researchwrite", "proposal", "opening report", "research plan", "research writing QA" |
 
 ---
 
