@@ -1,18 +1,19 @@
 <div align="center">
   <h1>Nature Skills</h1>
-  <p><strong>Reusable research skills for AI scholars worldwide</strong></p>
+  <h3>Reusable research skills for AI scholars worldwide</h3>
   <p>
     Literature Search · Paper Reading · Nature Writing · Reviewer Simulation · Figures · Citation Audit · Revision Response
   </p>
   <p>
     <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-Apache--2.0-2ea44f"></a>
-    <a href="#installation"><img alt="Install" src="https://img.shields.io/badge/install-Claude%20Code%20%7C%20Codex-111827"></a>
+    <a href="#installation"><img alt="Install" src="https://img.shields.io/badge/install-Claude%20Code%20%7C%20Codex%20%7C%20OpenClaw%20%7C%20OpenCode%20%7C%20Hermes-111827"></a>
     <a href="#skill-index"><img alt="Skills" src="https://img.shields.io/badge/skills-16-0ea5e9"></a>
     <a href="README.md"><img alt="Language" src="https://img.shields.io/badge/language-English%20%7C%20中文-1f6feb"></a>
   </p>
   <p>
     <a href="#installation">Install</a>
     · <a href="#skill-index">Skill Index</a>
+    · <a href="docs/open-source-agent-frameworks_EN.md">Other Install</a>
     · <a href="#shared-design-principles">Design Principles</a>
     · <a href="#adding-a-skill">Contributing</a>
     · <a href="README.md">中文</a>
@@ -256,6 +257,8 @@ Turn this paper into a full Chinese-English side-by-side Markdown reader.
 Create a Chinese PPT deck from this paper.
 ```
 
+For OpenClaw, OpenCode, Hermes, and other open-source agent frameworks, see the [OpenClaw / OpenCode / Hermes integration guide](docs/open-source-agent-frameworks_EN.md).
+
 ### Directory Layout
 
 ```text
@@ -276,6 +279,8 @@ skills/
 ```
 
 ### Other Agent Scenarios
+
+For OpenClaw, OpenCode, and Hermes, see the dedicated [integration guide](docs/open-source-agent-frameworks_EN.md).
 
 For other agents, keep a stable repository clone and create a lightweight
 subagent, slash command, or custom prompt wrapper that points to the real

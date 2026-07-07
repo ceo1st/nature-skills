@@ -1,18 +1,19 @@
 <div align="center">
   <h1>Nature Skills</h1>
-  <p><strong>面向全球学者的科研 Skill 库</strong></p>
+  <h3>面向全球学者的科研 Skill 库</h3>
   <p>
     文献检索 · 论文精读 · Nature 写作 · 审稿模拟 · 图表制作 · 引用审计 · 返修回复
   </p>
   <p>
     <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-Apache--2.0-2ea44f"></a>
-    <a href="#安装"><img alt="Install" src="https://img.shields.io/badge/install-Claude%20Code%20%7C%20Codex-111827"></a>
+    <a href="#安装"><img alt="Install" src="https://img.shields.io/badge/install-Claude%20Code%20%7C%20Codex%20%7C%20OpenClaw%20%7C%20OpenCode%20%7C%20Hermes-111827"></a>
     <a href="#技能索引"><img alt="Skills" src="https://img.shields.io/badge/skills-16-0ea5e9"></a>
     <a href="README_EN.md"><img alt="Language" src="https://img.shields.io/badge/language-中文%20%7C%20English-1f6feb"></a>
   </p>
   <p>
     <a href="#安装">立即安装</a>
     · <a href="#技能索引">技能索引</a>
+    · <a href="docs/open-source-agent-frameworks.md">其他安装</a>
     · <a href="#共享设计原则">设计原则</a>
     · <a href="#新增技能">贡献方式</a>
     · <a href="README_EN.md">English</a>
@@ -205,6 +206,8 @@ python -m pip install -r skills/nature-academic-search/mcp-server/requirements.t
 把这篇论文做成中文PPT。
 ```
 
+如果你使用 OpenClaw、OpenCode、Hermes 等开源 agent / 编程框架，请看 [OpenClaw / OpenCode / Hermes 接入教程](docs/open-source-agent-frameworks.md)。
+
 
 ### 目录结构
 
@@ -226,6 +229,8 @@ skills/
 ```
 
 ### 其他 agent 场景
+
+OpenClaw、OpenCode、Hermes 的具体接入方式见 [OpenClaw / OpenCode / Hermes 接入教程](docs/open-source-agent-frameworks.md)。
 
 用于其他 agent 时，建议保留一个稳定的仓库 clone，再创建轻量 subagent、slash command 或 custom prompt wrapper，指向真实的 `skills/*/SKILL.md`，并保留 `skills/_shared/`。
 
