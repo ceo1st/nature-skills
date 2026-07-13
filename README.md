@@ -25,7 +25,7 @@
 * 如果你有任何需求，欢迎提交 issue；如果我们认为该需求有意义且可行，会尽量推进实现。我们也欢迎 PR，但请按照本文后面的贡献格式提交，并录制配套使用教程，方便更高效地审核、理解与合并。
 * 面向全球AI学者收录通用科研skill，nature-skills是skill期刊的雏形，不以讲故事假大空的科研为目标，这里只在乎能否真正解决领域问题！
 * 知识星球名称：Nature Skills以及背后的哲学！
- <img width="1125" height="1708" alt="1591" src="https://github.com/user-attachments/assets/64e37909-0a48-4bfb-8471-c2aff971a0f6" />
+ <img width="300" height="400" alt="1591" src="https://github.com/user-attachments/assets/64e37909-0a48-4bfb-8471-c2aff971a0f6" />
 
 
 ## 快速开始
