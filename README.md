@@ -9,7 +9,8 @@
     <a href="README_EN.md"><img alt="Language" src="https://img.shields.io/badge/language-中文%20%7C%20English-1f6feb"></a>
   </p>
   <p>
-    <a href="#5-安装">立即安装</a>
+    <a href="https://yuan1z0825.github.io/nature-skills/">在线网站</a>
+    · <a href="#5-安装">立即安装</a>
     · <a href="#4-快速开始">快速开始</a>
     · <a href="#6-技能索引">技能索引</a>
     · <a href="docs/open-source-agent-frameworks.md">其他安装</a>

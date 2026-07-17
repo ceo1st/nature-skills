@@ -9,7 +9,8 @@
     <a href="README.md"><img alt="Language" src="https://img.shields.io/badge/language-English%20%7C%20中文-1f6feb"></a>
   </p>
   <p>
-    <a href="#5-installation">Install</a>
+    <a href="https://yuan1z0825.github.io/nature-skills/">Website</a>
+    · <a href="#5-installation">Install</a>
     · <a href="#4-quick-start">Quick Start</a>
     · <a href="#6-skill-index">Skill Index</a>
     · <a href="docs/open-source-agent-frameworks_EN.md">Other Install</a>
