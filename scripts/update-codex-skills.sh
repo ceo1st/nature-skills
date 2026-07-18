@@ -77,6 +77,9 @@ while [ "$#" -gt 0 ]; do
       [ "$#" -gt 0 ] || die "--dest requires a directory"
       DST="$1"
       ;;
+    --dest=*)
+      DST="${1#*=}"
+      ;;
     --help|-h)
       usage
       exit 0
