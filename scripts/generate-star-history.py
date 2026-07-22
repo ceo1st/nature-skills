@@ -41,8 +41,8 @@ def parse_args() -> argparse.Namespace:
         default=[],
         metavar="PATH",
         help=(
-            "Update the output image reference in this Markdown file with a generated "
-            "version query. Repeat for multiple README files."
+            "Update the output image reference in this Markdown file to a generated "
+            "versioned SVG path. Repeat for multiple README files."
         ),
     )
     parser.add_argument(
@@ -292,16 +292,43 @@ def generate_svg(
 '''
 
 
-def update_readme_cache_buster(path: pathlib.Path, output_ref: str, token: str) -> None:
-    """Version a Markdown image URL so GitHub does not reuse a stale render."""
-    original = path.read_text(encoding="utf-8")
-    pattern = re.compile(rf"{re.escape(output_ref)}(?:\?v=[A-Za-z0-9._-]+)?")
-    updated, replacements = pattern.subn(f"{output_ref}?v={token}", original)
+def versioned_output_path(output: pathlib.Path, token: str) -> pathlib.Path:
+    """Return a sibling path whose filename changes on every chart update."""
+    return output.with_name(f"{output.stem}-{token}{output.suffix}")
+
+
+def remove_old_versioned_outputs(output: pathlib.Path, keep: pathlib.Path) -> None:
+    """Keep only the current versioned chart so snapshots do not accumulate."""
+    token_pattern = re.compile(
+        rf"^{re.escape(output.stem)}-\d{{8}}T\d{{6}}Z{re.escape(output.suffix)}$"
+    )
+    for candidate in output.parent.glob(f"{output.stem}-*{output.suffix}"):
+        if candidate != keep and token_pattern.fullmatch(candidate.name):
+            candidate.unlink()
+            print(f"Removed stale versioned chart {candidate}")
+
+
+def update_readme_cache_buster(
+    path: pathlib.Path,
+    output_ref: str,
+    versioned_ref: str,
+) -> None:
+    """Use a versioned image path so GitHub cannot reuse a stale Camo render."""
+    with path.open("r", encoding="utf-8", newline="") as handle:
+        original = handle.read()
+    output_path = pathlib.PurePosixPath(output_ref)
+    versioned_pattern = (
+        rf"{re.escape(output_path.parent.as_posix())}/"
+        rf"{re.escape(output_path.stem)}(?:-\d{{8}}T\d{{6}}Z)?"
+        rf"{re.escape(output_path.suffix)}(?:\?v=[A-Za-z0-9._-]+)?"
+    )
+    updated, replacements = re.subn(versioned_pattern, versioned_ref, original)
     if replacements == 0:
         raise RuntimeError(f"Could not find {output_ref!r} in {path}")
     if updated != original:
-        path.write_text(updated, encoding="utf-8")
-    print(f"Updated cache-busting reference in {path} ({replacements} occurrence(s))")
+        with path.open("w", encoding="utf-8", newline="") as handle:
+            handle.write(updated)
+    print(f"Updated versioned chart reference in {path} ({replacements} occurrence(s))")
 
 
 def main() -> int:
@@ -314,12 +341,24 @@ def main() -> int:
     output = pathlib.Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     generated_at = dt.datetime.now(dt.timezone.utc)
-    output.write_text(generate_svg(args.repo, points, generated_at), encoding="utf-8")
+    svg = generate_svg(args.repo, points, generated_at)
+    output.write_text(svg, encoding="utf-8")
     cache_token = generated_at.strftime("%Y%m%dT%H%M%SZ")
+    versioned_output = versioned_output_path(output, cache_token)
+    versioned_output.write_text(svg, encoding="utf-8")
+    remove_old_versioned_outputs(output, versioned_output)
     output_ref = pathlib.PurePosixPath(args.output).as_posix()
+    versioned_ref = pathlib.PurePosixPath(versioned_output).as_posix()
     for readme in args.cache_bust_readme:
-        update_readme_cache_buster(pathlib.Path(readme), output_ref, cache_token)
-    print(f"Wrote {output} with {points[-1][1]:,} stars and {len(points):,} daily points")
+        update_readme_cache_buster(
+            pathlib.Path(readme),
+            output_ref,
+            versioned_ref,
+        )
+    print(
+        f"Wrote {output} and {versioned_output} with "
+        f"{points[-1][1]:,} stars and {len(points):,} daily points"
+    )
     return 0
 
 
